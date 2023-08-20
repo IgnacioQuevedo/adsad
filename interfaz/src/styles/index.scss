@@ -1,0 +1,312 @@
+//local
+@use "variables";
+//modules
+@use "@material/ripple";
+@use '@material/button/mdc-button';
+@use '@material/button';
+@use "@material/top-app-bar";
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/icon-button/styles" as icon-styles;
+@use "@material/drawer";
+@use "@material/list";
+@use "@material/fab";
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab-scroller";
+@use "@material/tab-indicator";
+@use "@material/tab/mdc-tab";
+@use "@material/tab";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/styles";
+@use '@material/select';
+@use "@material/checkbox";
+@use "@material/form-field";
+@use "@material/card";
+@use "@material/snackbar/mdc-snackbar";
+@use "@material/dialog";
+
+@include dialog.core-styles;
+
+@include card.core-styles;
+@include checkbox.core-styles;
+@include form-field.core-styles;
+@include fab.core-styles;
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.deprecated-core-styles;
+@include textfield.core-styles;
+
+
+body {
+    background-color: variables.$background-dark;
+    margin: 0;
+    font-family: variables.$fontFamily;
+    display: flex;
+    height: 100vh;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+}
+  
+//BOTONES GRUPOS
+.mdc-button {
+  @include button.ink-color(#84565E);
+  top:8vw;
+  margin-top: 50%;
+  padding:0.5em 3em;
+  border:0.16em solid #0f0c0c;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-weight: bold;
+  font-family:'Roboto',sans-serif;
+  text-align:center;
+  transition: all 0.15s;
+  flex: auto;
+  background-color:#681840 ;
+}
+.mdc-button__label{
+  color: white;
+}
+
+.botonInfo{
+  --mdc-theme-primary: rgb(225, 225, 225);
+  margin-top: 1%;
+  top:0vw;
+  cursor: default;
+}
+
+.infoMatch{
+  color: #0f0c0c;
+  cursor: default;
+}
+//SECCION BOTON GUARDADO DE EQUIPOS
+
+.bttnSave{
+  @include button.ink-color(#000000);
+  --mdc-theme-on-primary: #000000;
+  --mdc-theme-primary: #2fbb23;
+  border:0.16em;
+  color: #FFFFFF;
+  margin-top: 2%;
+  top:0vw;
+  font-weight: bold;
+}
+//SECCION LISTA CON ITEMS
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+//COLORES DE LOS ITEMS/ITEM SELECCIONADO
+.mdc-drawer .mdc-deprecated-list-item {
+  background-color:black
+}
+
+//SECCION NOTIFICACIONES
+.Clase-Notificaciones{
+  float: right;
+  flex: auto;
+}
+//SECCION QUE ALMACENA LOS GRUPOS
+.Clase-Grupos{
+margin-top: 1%;
+}
+//ESTILOS DE LOS BOTONES DE LAS NOTIFICACIONES
+ .ClaseNotifi{
+  top: 0vh;
+  text-align: center;
+  font-size: large;
+  font-weight: 150;
+  margin-top: 2%;
+  --mdc-theme-primary: white;
+ }
+ .mdc-button:not(:disabled) {
+  color: #681840;
+  font-weight: bolder;
+}
+//SECCION GRUPOS
+
+.mdc-touch-target-wrapper{
+  text-align: center;
+  flex: auto;
+}
+
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+//SECCION CARD
+.mdc-card {
+  height: 11%;
+  width: 50%;
+  position: relative;
+  background-color: rgba(204, 193, 198, 0.7);
+  img{
+    width: 40%;
+    align-self: center;
+  }
+}
+
+//SECCION INPUT DE LAS CARDS
+input{
+  width: 6vh;
+  height: 6vh;
+  font-size: xx-large;
+  color: rgb(30, 30, 55);
+  border: 2px solid green;
+  font-weight: bold;
+}
+
+//TEXTO PARTIDOS PREVIOS
+ .Clase-InfoDetallada{
+  font-weight: bold;
+  text-decoration: underline;
+ }
+
+//SNACKBAR
+#snackbar,#snackbar2 {
+  visibility: hidden;
+  min-width: 250px; 
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff; 
+  text-align: center; 
+  border-radius: 2px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 30px; 
+}
+
+//POP UP INGRESO CORREO 
+.Clase-MailCorreo{
+
+  width: 90%;
+
+}
+
+.bttnPuntaje{
+  color: #0f0c0c;
+}
+
+.Clase-Ranking{
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin-top: 2%;
+  color: #0f0c0c;
+  background-color: #c9a3a3;
+  width: 50%;
+  img{
+    width: 30%;
+  }
+}
+.Clase-TextoPartidosPrevios{
+  color: #000000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#snackbar.show,#snackbar2.show {
+  visibility: visible; 
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+.mdc-top-app-bar__title{
+  color: white;
+}
+.app-bar{
+  color: white;
+}
+
+.main-content {
+ 
+overflow: auto;
+height: 100%;
+background-image: url(https://images8.alphacoders.com/128/1286559.jpg);
+background-size: cover;
+}
+.app-bar {
+  position: absolute;
+}
+.mdc-top-app-bar {
+  z-index: 7;
+  background-color: #681840;
+}
+.mdc-drawer__content{
+  @include drawer.surface-fill-color(variables.$primary);
+  background-color: #681840;
+  
+}
+//FONDO DE LAS SECCIONES DEL MENU
+.mdc-deprecated-list{
+  background-color: gray;
+}
+.mdc-drawer {
+  border: none;
+  .mdc-deprecated-list-item.mdc-list-item--activated {
+    @include list.deprecated-item-primary-text-ink-color(variables.$on-primary);
+    @include list.deprecated-item-graphic-ink-color(variables.$on-primary)
+  }
+  .mdc-deprecated-list-item {
+    @include list.deprecated-item-primary-text-ink-color(rgba(variables.$on-primary, .7));
+    @include list.deprecated-item-graphic-ink-color(rgba(variables.$on-primary, .7))
+    
+  }
+}
+.mdc-tab-bar {
+  background-color: variables.$primary;
+}
+.mdc-tab {
+  @include tab.text-label-color(rgba(variables.$on-primary, .7));
+  @include tab.icon-color(rgba(variables.$on-primary, .7));
+  &--active {
+    @include tab.active-text-label-color(variables.$on-primary);
+    @include tab.active-icon-color(variables.$on-primary);
+  }
+}
+.mdc-tab-indicator--active > .mdc-tab-indicator__content--underline{
+  border-color: variables.$on-primary;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
